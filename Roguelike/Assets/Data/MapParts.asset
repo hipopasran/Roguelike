@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 122f7517912456847be5d16fa6aa827b, type: 3}
+  m_Name: MapParts
+  m_EditorClassIdentifier: 
+  floor: {fileID: 3304936163876872894, guid: 02749cf9e9b84bb40ba63fe7c34798d1, type: 3}
+  box: {fileID: 6661985549440281759, guid: 1d711a05cf838ef4ab32fdb7cbffd624, type: 3}
+  wall: {fileID: 8313302447211373094, guid: 8179c459d3ce44240bfb8a0e579dbb05, type: 3}
+  finish: {fileID: 8552338605222662664, guid: f870af8277bcac14ca5a296c539e14f4, type: 3}
