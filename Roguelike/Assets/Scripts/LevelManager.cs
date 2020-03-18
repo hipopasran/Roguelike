@@ -15,7 +15,7 @@ public struct FieldSize
     public int Y { get; }
 }
 
-public class LevelCreator : Singleton<LevelCreator>
+public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField] private LevelSettings  settings;
     [SerializeField] private MapParts       parts;
@@ -28,8 +28,10 @@ public class LevelCreator : Singleton<LevelCreator>
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.OnInitGame += SetupScene;
-            GameManager.Instance.OnRestart  += Restart;
+            GameManager.Instance.OnInitGame     += SetupScene;
+            GameManager.Instance.OnRestart      += Restart;
+            GameManager.Instance.OnHome         += Home;
+            GameManager.Instance.OnNextLevel    += NextLevel;
         }
 
     }
@@ -38,8 +40,10 @@ public class LevelCreator : Singleton<LevelCreator>
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.OnInitGame -= SetupScene;
-            GameManager.Instance.OnRestart  -= Restart;
+            GameManager.Instance.OnInitGame     -= SetupScene;
+            GameManager.Instance.OnRestart      -= Restart;
+            GameManager.Instance.OnHome         -= Home;
+            GameManager.Instance.OnNextLevel    -= NextLevel;
         }
     }
 
@@ -116,17 +120,33 @@ public class LevelCreator : Singleton<LevelCreator>
 
     private void SetupScene(int level)
     {
+        if(boardHolder != null)
+        {
+            Destroy(boardHolder.gameObject);
+        }
+
         GenerateSize();
         LevelSetup();
         InitialiseList();
         LayoutObjectAtRandom(parts.Box, 0, settings.MaxCountOfBox);
         LayoutObjectAtRandom(parts.Wall, 0, settings.MaxCountOfWall);
         LayoutObjectAtRandom(parts.Finish, 1, 1);
+        LayoutObjectAtRandom(parts.Player, 1, 1);
     }
 
     private void Restart(int currentLevel)
     {
         Destroy(boardHolder.gameObject);
         SetupScene(currentLevel);
+    }
+
+    private void Home()
+    {
+        Destroy(boardHolder.gameObject);
+    }
+
+    private void NextLevel()
+    {
+        Destroy(boardHolder.gameObject);
     }
 }

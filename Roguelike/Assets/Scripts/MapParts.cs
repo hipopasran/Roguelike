@@ -9,10 +9,12 @@ public class MapParts : ScriptableObject
     [SerializeField] private GameObject box;
     [SerializeField] private GameObject wall;
     [SerializeField] private GameObject finish;
+    [SerializeField] private GameObject player;
 
     public GameObject Floor     => floor;
     public GameObject Box       => box;
     public GameObject Wall      => wall;
     public GameObject Finish    => finish;
+    public GameObject Player    => player;
 
 }

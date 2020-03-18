@@ -16,3 +16,4 @@ MonoBehaviour:
   box: {fileID: 6661985549440281759, guid: 1d711a05cf838ef4ab32fdb7cbffd624, type: 3}
   wall: {fileID: 8313302447211373094, guid: 8179c459d3ce44240bfb8a0e579dbb05, type: 3}
   finish: {fileID: 8552338605222662664, guid: f870af8277bcac14ca5a296c539e14f4, type: 3}
+  player: {fileID: 864069704333540675, guid: 2a720ee012318e14fbc73ae5bef21edc, type: 3}
